@@ -1,0 +1,17 @@
+import pandas as pd
+# Load the iris dataset 
+iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv') 
+# Print the first 5 rows of the dataset 
+print(iris.head())
+# Group the data by species and calculate the mean of each column 
+iris_grouped = iris.groupby('species').mean() 
+# Print the grouped data 
+print(iris_grouped)
+import matplotlib.pyplot as plt 
+# Create a bar plot of the mean of each column for each species 
+iris_grouped.plot(kind='bar') 
+# Set the title and axis labels 
+plt.title('Mean of Each Column for Each Species') 
+plt.xlabel('Species') 
+plt.ylabel('Mean') 
+plt.show()
